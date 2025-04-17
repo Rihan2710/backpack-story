@@ -102,13 +102,13 @@ export function Navbar() {
                       <path d="m6 9 6 6 6-6" />
                     </svg>
                   </button>
-                  <div className="absolute top-full left-0 mt-2 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-white ring-opacity-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <div className="absolute top-full left-0 mt-2 w-48 rounded-md shadow-lg bg-white-800 ring-1 ring-white ring-opacity-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     <div className="py-1">
                       {link.submenu.map((subItem) => (
                         <Link
                           key={subItem.label}
                           href={subItem.href}
-                          className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
+                          className="block px-4 py-2 text-sm text-white hover:bg-white-700"
                         >
                           {subItem.label}
                         </Link>
@@ -200,7 +200,7 @@ export function Navbar() {
       {/* Mobile Navigation */}
       <div
          className={cn(
-          "md:hidden absolute w-full bg-white-800 shadow-lg transition-all duration-300 ease-in-out",
+          "md:hidden absolute w-full bg-grey-800 shadow-lg transition-all duration-300 ease-in-out",
           mobileMenuOpen ? "max-h-screen opacity-100 visible" : "max-h-0 opacity-0 invisible overflow-hidden"
         )}
       >
@@ -210,7 +210,7 @@ export function Navbar() {
               {link.submenu ? (
                 <div>
                   <button
-                    className="flex items-center justify-between w-full text-white hover:text-teal-400 py-2"
+                    className="flex items-center justify-between w-full text-white hover:text-white-400 py-2"
                     onClick={() => toggleDropdown(link.label)}
                   >
                     <span>{link.label}</span>
@@ -238,7 +238,7 @@ export function Navbar() {
                         <Link
                           key={subItem.label}
                           href={subItem.href}
-                          className="block text-sm text-white hover:text-teal-400 py-2"
+                          className="block text-sm text-white hover:text-white-400 py-2"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {subItem.label}
@@ -250,7 +250,7 @@ export function Navbar() {
               ) : (
                 <Link
                   href={link.href}
-                  className="block text-navy hover:text-teal py-2"
+                  className="block text-navy hover:text-white py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
