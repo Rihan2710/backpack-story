@@ -76,14 +76,14 @@ export function Navbar() {
               {link.submenu ? (
                 <>
                   <button
-                    // className={cn(
-                    //   "flex items-center text-sm font-medium tracking-wider",
-                    //   isScrolled ? "text-navy hover:text-teal" : "text-white hover:text-mint"
-                    // )}
                     className={cn(
+  "flex items-center text-sm font-medium tracking-wider",
+  isScrolled ? "text-navy hover:text-teal" : "text-white hover:text-mint"
+)}
+{/*                     className={cn(
                       "flex items-center text-sm font-medium tracking-wider",
                       "text-white hover:text-teal-400"
-                    )}
+                    )} */}
                     onClick={() => toggleDropdown(link.label)}
                   >
                     {link.label}
