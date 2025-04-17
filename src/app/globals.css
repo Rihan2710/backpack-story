@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 200 15% 22%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 200 15% 22%;
+
+    --popover: 0 0% 98%;
+    --popover-foreground: 200 15% 22%;
+
+    --primary: 187 54% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 178 46% 84%;
+    --secondary-foreground: 200 15% 22%;
+
+    --muted: 180 80% 80%;
+    --muted-foreground: 200 5% 40%;
+
+    --accent: 178 46% 84%;
+    --accent-foreground: 200 15% 22%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 200 5% 84%;
+    --input: 200 5% 84%;
+    --ring: 187 54% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 200 15% 22%;
+    --foreground: 0 0% 98%;
+
+    --card: 200 15% 22%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 200 15% 22%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 187 54% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 178 46% 84%;
+    --secondary-foreground: 200 15% 22%;
+
+    --muted: 200 10% 30%;
+    --muted-foreground: 200 5% 70%;
+
+    --accent: 178 46% 84%;
+    --accent-foreground: 200 15% 22%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 200 10% 30%;
+    --input: 200 10% 30%;
+    --ring: 187 54% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles for Backpack Story website */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.hero-section .content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+}
+
+.hero-text {
+  font-family: var(--font-oswald);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 3.5rem;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .hero-text {
+    font-size: 2.5rem;
+  }
+}
+
+.breadcrumbs-section {
+  background-position: center;
+  background-size: cover;
+  padding: 5rem 0;
+  position: relative;
+}
+
+.breadcrumbs-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.breadcrumbs-content {
+  position: relative;
+  z-index: 10;
+  color: white;
+  text-align: center;
+}
+
+.tour-card {
+  transition: transform 0.3s ease;
+}
+
+.tour-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Custom animation for section reveals */
+.fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation for multiple elements */
+.stagger-animation > * {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+.stagger-animation > *:nth-child(7) { animation-delay: 0.7s; }
+.stagger-animation > *:nth-child(8) { animation-delay: 0.8s; }
+.stagger-animation > *:nth-child(9) { animation-delay: 0.9s; }
+
+/* Tour cards price tag styling */
+.price-tag {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.price-tag .old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.price-tag .new-price {
+  color: #3AABC4;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Stats counter styling */
+.stats-counter {
+  font-family: var(--font-oswald);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #283134;
+  margin-bottom: 0.5rem;
+}
+
+.stats-label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6c757d;
+}
