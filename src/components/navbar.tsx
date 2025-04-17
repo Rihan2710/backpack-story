@@ -200,7 +200,7 @@ export function Navbar() {
       {/* Mobile Navigation */}
       <div
          className={cn(
-          "md:hidden absolute w-full bg-gray-800 shadow-lg transition-all duration-300 ease-in-out",
+          "md:hidden absolute w-full bg-white-800 shadow-lg transition-all duration-300 ease-in-out",
           mobileMenuOpen ? "max-h-screen opacity-100 visible" : "max-h-0 opacity-0 invisible overflow-hidden"
         )}
       >
