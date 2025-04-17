@@ -55,7 +55,7 @@ export function Navbar() {
         "fixed top-0 left-0 w-full z-50 transition-all duration-300",
         isScrolled
           ? "bg-gray-900 shadow-md py-3"
-      : "bg-gray-800 py-5"
+          : "bg-gray-800 py-5"
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -77,13 +77,9 @@ export function Navbar() {
                 <>
                   <button
                     className={cn(
-  "flex items-center text-sm font-medium tracking-wider",
-  isScrolled ? "text-navy hover:text-teal" : "text-white hover:text-mint"
-)}
-{/*                     className={cn(
                       "flex items-center text-sm font-medium tracking-wider",
-                      "text-white hover:text-teal-400"
-                    )} */}
+                      isScrolled ? "text-navy hover:text-teal" : "text-white hover:text-teal-400"
+                    )}
                     onClick={() => toggleDropdown(link.label)}
                   >
                     {link.label}
@@ -121,7 +117,7 @@ export function Navbar() {
                   href={link.href}
                   className={cn(
                     "flex items-center text-sm font-medium tracking-wider",
-                    "text-white hover:text-teal-400"
+                    isScrolled ? "text-navy hover:text-teal" : "text-white hover:text-teal-400"
                   )}
                 >
                   {link.label}
@@ -134,7 +130,6 @@ export function Navbar() {
         {/* Search Icon */}
         <button
           className="hidden md:flex items-center justify-center p-2 rounded-full text-white hover:text-teal-400"
-
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -154,10 +149,6 @@ export function Navbar() {
 
         {/* Mobile menu button */}
         <button
-          // className={cn(
-          //   "md:hidden flex items-center p-2 rounded-md",
-          //   isScrolled ? "text-navy" : "text-white"
-          // )}
           className="md:hidden flex items-center p-2 rounded-md text-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle mobile menu"
@@ -250,7 +241,7 @@ export function Navbar() {
               ) : (
                 <Link
                   href={link.href}
-                  className="block text-navy hover:text-teal py-2"
+                  className="block text-white hover:text-teal-400 py-2" // Fixed: Changed text-navy to text-white
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
